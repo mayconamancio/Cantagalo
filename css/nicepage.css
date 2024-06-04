@@ -40557,6 +40557,7 @@ a.u-link.u-text-hover-grey-90:hover {
   padding: 15px 25px;
   text-decoration: center;
   border-radius: 10px 20px 5px 8px;
+  text-align: center;
 }
 .buy-button:hover {
   background-color: #223094;
