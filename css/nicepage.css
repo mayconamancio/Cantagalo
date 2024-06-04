@@ -40550,3 +40550,13 @@ a.u-link.u-text-hover-grey-90:hover {
   color: var(--grey-90) !important;
 }
 /*end-variables colors*/
+
+.buy-button {
+  background-color: #199319;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+}
+.buy-button:hover {
+  background-color: #223094;
+}
