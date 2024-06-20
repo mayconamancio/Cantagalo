@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="Breads Bakery">
+  <meta name="description" content="">
+  <title>Carrinho de Compras - Canta Galo</title>
+  <link rel="icon" href="./images/iconcantagalo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/nicepage.css" media="screen">
+  <link rel="stylesheet" href="css/nicepage-site.css" media="screen">
+  <link rel="stylesheet" href="css/Landing.css" media="screen">
+  <script class="u-script" type="text/javascript" src="js/jquery-3.5.1.min.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="js/nicepage.js" defer=""></script>
+  <script src="cart.js" defer></script>
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+  <meta name="generator" content="Nicepage 5.8.12, nicepage.com">
+  <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+  <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+  <script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "",
+    "logo": "images/logocantagalo.png"
+  }</script>
+  <meta name="theme-color" content="#e8b284">
+  <meta property="og:title" content="Carrinho de Compras">
+  <meta property="og:type" content="website">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .u-clearfix {
+      clear: both;
+    }
+
+    .u-header {
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    .u-sheet {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .u-logo-image {
+      max-width: 150px;
+      height: auto;
+    }
+
+    .u-menu {
+      float: right;
+    }
+
+    .u-nav-link {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .u-nav-link:hover {
+      color: #e8b284;
+    }
+
+    .produto {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .produto h2 {
+      margin-top: 0;
+    }
+
+    .produto p {
+      margin-bottom: 5px;
+    }
+
+    .carrinho {
+      float: right;
+      width: 300px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    .carrinho h2 {
+      margin-top: 0;
+    }
+
+    .carrinho ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .carrinho ul li {
+      margin-bottom: 5px;
+    }
+
+    .carrinho p {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body class="u-body u-xl-mode" data-lang="en">
+  <header class="u-clearfix u-header u-white u-header" id="sec-3c14">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <a href="#" class="u-image u-logo u-image-1">
+        <img src="images/logocantagalo.png" class="u-logo-image u-logo-image-1">
+      </a>
+      <nav class="u-menu u-menu-hamburger u-offcanvas u-menu-1" data-responsive-from="XL">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+          <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+            <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
+            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect></g></svg>
+          </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+          <ul class="u-nav u-unstyled u-nav-1">
+            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-base" href="index.html" style="padding: 10px 20px;">Home</a></li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-base" href="cart.html" style="padding: 10px 20px;">Carrinho de Compras</a></li>
+          </ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+            <div class="u-inner-container-layout u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.html">Home</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="cart.html">Carrinho de Compras</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <!-- Produtos -->
+      <div class="produto">
+        <h2>Doce de Abóbora com Cocô 680gr</h2>
+        <p>Preço: R$ 25,00</p>
+        <button onclick="adicionarProduto('Doce de Abóbora com Cocô 680gr', 25.00)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <h2>Doce de Leite com Ameixa 680gr</h2>
+        <p>Preço: R$ 25,00</p>
+        <button onclick="adicionarProduto('Doce de Leite com Ameixa 680gr', 25.00)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <h2>Doce de Laranja da Terra 680gr</h2>
+        <p>Preço: R$ 25,00</p>
+        <button onclick="adicionarProduto('Doce de Laranja da Terra 680gr', 25.00)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <h2>Figo em Caldas 680gr</h2>
+        <p>Preço: R$ 25,00</p>
+        <button onclick="adicionarProduto('Figo em Caldas 680gr', 25.00)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <h2>Doce de Leite Puro 310gr</h2>
+        <p>Preço: R$ 15,00</p>
+        <button onclick="adicionarProduto('Doce de Leite Puro 310gr', 15.00)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <h2>Vinage Aromatizado 500ml</h2>
+        <p>Preço: R$ 21,00</p>
+        <button onclick="adicionarProduto('Vinage Aromatizado 500ml', 21.00)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <h2>Mel 270ml</h2>
+        <p>Preço: R$ 18,00</p>
+        <button onclick="adicionarProduto('Mel 270ml', 18.00)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <h2>Mel 750ml</h2>
+        <p>Preço: R$ 36,00</p>
+        <button onclick="adicionarProduto('Mel 750ml', 36.00)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <h2>Pimenta de Cheiro</h2>
+        <p>Preço: R$ 25,00</p>
+        <button onclick="adicionarProduto('Pimenta de Cheiro', 25.00)">Adicionar ao Carrinho</button>
+      </div>
+
+      <!-- Carrinho de compras -->
+      <div class="carrinho">
+        <h2>Carrinho de Compras</h2>
+        <ul id="lista-produtos">
+          <!-- Lista de produtos adicionados ao carrinho -->
+        </ul>
+        <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+        <div id="wallet_container">
+        <button id="checkout-btn">Pagar com Mercado Pago</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-6f16">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <p class="u-small-text u-text u-text-variant u-text-1">Todos os direitos reservados © 2023 Canta Galo</p>
+    </div>
+  </footer>
+
+  <script>
+    // Array para armazenar os produtos no carrinho
+    let carrinho = [];
+
+    // Função para adicionar um produto ao carrinho
+    function adicionarProduto(nome, preco) {
+        carrinho.push({ title: nome, unit_price: preco, quantity: 1 });
+        atualizarCarrinho();
+    }
+
+    // Função para atualizar o conteúdo do carrinho na página
+    function atualizarCarrinho() {
+        const listaProdutos = document.getElementById('lista-produtos');
+        const totalCarrinho = document.getElementById('total-carrinho');
+        let total = 0;
+
+        // Limpa a lista de produtos no carrinho antes de atualizar
+        listaProdutos.innerHTML = '';
+
+        // Adiciona cada produto do carrinho à lista e calcula o total
+        carrinho.forEach(produto => {
+            const itemLista = document.createElement('li');
+            itemLista.textContent = `${produto.title} - R$ ${produto.unit_price.toFixed(2)}`;
+            listaProdutos.appendChild(itemLista);
+            total += produto.unit_price;
+        });
+
+        // Atualiza o total do carrinho na página
+        totalCarrinho.textContent = total.toFixed(2);
+    }
+
+    // Configurar o SDK do Mercado Pago
+    const publicKey = 'YOUR_PUBLIC_KEY';  // Substitua pela sua chave pública
+    const mercadoPago = new MercadoPago(publicKey, {
+        locale: 'pt-BR' // Defina o idioma do checkout
+    });
+
+    // Função para criar a preferência de pagamento
+    function criarPreferencia() {
+        fetch('/create_preference', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                items: carrinho
+            })
+        })
+        .then(response => response.json())
+        .then(preference => {
+            mercadoPago.checkout({
+                preference: {
+                    id: preference.id
+                },
+                autoOpen: true // Abre o checkout automaticamente
+            });
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    document.getElementById('checkout-btn').addEventListener('click', criarPreferencia);
+  </script>
+</body>
+</html>
